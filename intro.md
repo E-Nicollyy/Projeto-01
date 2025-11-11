@@ -34,3 +34,24 @@ data de cadastro automatica com horario atual
 
 ##  UNIQUE KEY uk_email(email) 
 impede e-mails repetidos
+
+## htmlspecialchars
+converter caracteres especiais em entidades HTML. O principal objetivo é a segurança.
+A função substitui caracteres específicos pelos seus equivalentes em entidades HTML, que são renderizados como texto normal pelo navegador: 
+
+## foreach -> Estrutura que percorre os registros do banco
+é uma estrutura de repetição (ou loop) do PHP usada para percorrer arrays ou objetos.
+Ou seja, ele serve para repetir um bloco de código para cada item de um array.
+
+
+## CRIANDO TABELA NO BD
+
+    CREATE TABLE IF NOT EXISTS usuarios(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(160) NOT UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL, 
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+    
