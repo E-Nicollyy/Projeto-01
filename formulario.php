@@ -20,9 +20,9 @@ include __DIR__ . '/includes/header.php';
 
 <!-- enctype - obrigatorio para armazenar arquivos -->
 
-<main class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
-    <form class="bg-dark text-light card p-5 w-25 border border-light" action="salvar.php" method="POST" enctype="multipart/form-data">
-        <h1 class="text-center mb-4">Realize o seu Cadastro!</h1>
+<main class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px); background-color: rgb(207, 207, 216);">
+    <form class="bg-black text-light card p-5 w-25 border border-light" action="salvar.php" method="POST" enctype="multipart/form-data">
+        <h1 class="text-center mb-4">Faça seu Cadastro!</h1>
 
         <label class="fw-bold w-100 mb-2">Nome
             <input type="text" name="nome" required placeholder="Emilly" class="form-control">

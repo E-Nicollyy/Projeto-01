@@ -57,21 +57,22 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-<body class="" style="background-color:rgb(102, 102, 153);">
+
+<body class="" style="background-color: rgb(207, 207, 216);";>
     
-<div class="card sessao border border-light p-5 mx-4 bg-dark text-light" style="rgb(102, 102, 153);">
+<div class="card sessao border border-light p-5 mx-4  text-light" style="background-color: rgb(0, 0, 0);">
 <h1 class="text-center fw-bold p-4 ">Lista de Cadastros</h1>
 
 <!-- INICIO - Formulário de busca -->
 
 <form method="get" class="text-center">
 
-<input type="text" name="busca" placeholder="Pesquisar..." value="<?=htmlspecialchars($busca)?>">
+<input class="form-control mb-4" type="text" name="busca" placeholder="Pesquisar..." value="<?=htmlspecialchars($busca)?>">
 
-<button class="btn btn-primary"  type="submit">Buscar</button>
-<a href="listar.php" class="btn btn-warning ">Limpar</a>
+<button class="btn border border-info text-white"  type="submit" >Buscar</button>
+<a href="listar.php" class="btn border border-warning text-white">Limpar</a>
 
-<a href="formulario.php" class="btn btn-success ">+ Novo Cadastro</a> 
+<a href="formulario.php" class="btn border border-success text-white ">+ Novo Cadastro</a> 
 
 </form>
 
@@ -87,11 +88,11 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
  <?php else: ?>
 
-<table class="table table-bordered border border-black text-center mx-4 mt-4">
+<table class="table table-striped mt-5 text-center justify-content-center ">
 
-<thead>
+<thead class="">
 
-<tr class="table-dark ">  <!-- Linhas -->
+<tr class=" ">  <!-- Linhas -->
 
 <!-- Colunas da tabela -->
 <th>ID</th>
@@ -120,7 +121,7 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </tbody>
 
-<tr class="table-secondary">
+<tr class="table-dark">
 
 <td><?=(int)$r['id'] ?> </td>
 <td><?= htmlspecialchars($r['nome']) ?></td>
@@ -148,8 +149,8 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- links edição/exclusão -->
 <td>
-    <a href="editar.php?id=<?= (int)$r['id']?>" class="editar btn btn-primary">Editar</a>
-    <a href="deletar.php?id=<?= (int)$r['id']?>" onclick="return confirm('tem certeza que seja excluir este registro?');" class="excluir btn btn-danger">Excluir</a>
+    <a href="editar.php?id=<?= (int)$r['id']?>" class="editando btn border border-primary text-white">Editar</a>
+    <a href="deletar.php?id=<?= (int)$r['id']?>" onclick="return confirm('tem certeza que seja excluir este registro?');" class="excluir btn border border-danger text-white">Excluir</a>
 </td>
 
 </tr>
