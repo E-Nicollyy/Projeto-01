@@ -1,55 +1,60 @@
 <?php 
-function db() : PDO{
 
-    // Criando função para devolver uma conexão PDO(PHP Data Object ) com o banco de dados
+// Função que retorna uma conexão PDO com o banco online
+function db() : PDO {
 
-    // declarado variavel statica onde ela reaproveita a mesma conexão com meu banco de dados
+    // Variável estática: mantém a mesma conexão durante toda a execução
     static $pdo;
 
+    // Se AINDA não existe conexão, cria uma nova
     if(!$pdo){
-        // ! ao contrario. Verifica se aind não existe uma conexão ativa
         try{
-            // tentar executar o bloco abaixo 
-            $dsn = 'mysql:host=localhost;dbname=emilly_db;charset=utf8mb4';
 
-            // define a string de conexão (DNS) dizendo o tipo de banco (mysql)
-            // O servidor (localhost) o nome do banco (emmilly_db)
-            // o conjunto de caracteres (utf8mb4)
+            // ======================================================
+            //  CONFIGURAÇÕES DO BANCO NO INFINITYFREE
+            // ======================================================
 
-        $pdo =new PDO(
-        $dsn,   
-        'root',  
-        '',      
+            // Host do servidor MySQL do InfinityFree
+            $host = 'sql312.infinityfree.com';
 
-            [
-                PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                // Define que se der erro, PDO vai lançar uma exceção 
+            // Nome do banco que o InfinityFree criou
+            $dbname = 'if0_40421490_mysqlPHP00';
 
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                // define que quando buscar dados, eles virão como arrays associativos
+            // DSN = string que o PDO usa para conectar
+            $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
 
-            ]
+            // Usuário e senha do MySQL no InfinityFree
+            $usuario = 'if0_40421490';
+            $senha   = '@E_nicollyy3'; // <-- Troque pela senha real do painel
 
-            );  
-        echo "<br> <br>";
+            // ======================================================
+            //  CRIA A CONEXÃO COM O BANCO
+            // ======================================================
+            $pdo = new PDO(
+                $dsn,
+                $usuario,
+                $senha,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,   // Mostra erros
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // Retorna arrays associativos
+                ]
+            );
+
+        } catch(PDOException $e){
+
+            // Se der erro ao conectar, mostra o motivo na tela
+            echo "<b>Erro ao conectar ao banco: </b>" . $e->getMessage();
+            exit; // Encerra o script
         }
-
-    catch(PDOException $e){
-        // Se der algum erro no bloco try(acima), cai aqui
-        echo "<b> Erro ao conectar ao banco: </b>". $e->getMessage();
-        // mostra a mensagem de erro diretamente na tela
-
-        exit;
-        // Encerra a execução do script (opcional)
-    }    
     }
 
+    // Retorna o objeto PDO já conectado
     return $pdo;
-    // Retorna objeto de conexaão 
+}
 
+// Se este arquivo for aberto diretamente no navegador, testa a conexão
+if (basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])) {
+    db(); // Testa a conexão
 }
-// Chamar a função automaticamente se o arquivo for aberto direto no navegador
-if(basename(__FILE__) === basename ($_SERVER['SCRIPT_FILENAME']) ){
-    db();    
-    // Executa a conexão e mostra a mensagem na tela
-}
+
+?>
