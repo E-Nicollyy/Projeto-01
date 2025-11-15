@@ -19,7 +19,7 @@
 
 <nav class=" d-flex gap-3 ">
 
-<a class="cadastro text-decoration-none text-white fw-semibold"href="./formulario.php">Cadastro</a>
+<a class="cadastro text-decoration-none text-white fw-semibold"href="./index.php">Cadastro</a>
 <a class="cadastro text-decoration-none text-white fw-semibold"href="#">Login<a>
 <a class="cadastro text-decoration-none text-white fw-semibold"href="./listar.php">Consulta</a>
 </nav>

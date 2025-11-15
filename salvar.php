@@ -139,7 +139,7 @@ if ($erro === '') {
 <!-- Se deu tudo certo no cadastro, mostra mensagem de sucesso -->
 <?php if ($ok): ?>
   <p>Dados salvos com sucesso!</p>
-  <p><a href="formulario.php">Voltar</a></p>
+  <p><a href="index.php">Voltar</a></p>
 
 <!-- Se não deu certo, entra aqui -->
 <?php else: ?>
@@ -156,6 +156,6 @@ if ($erro === '') {
   <?php endif; ?>
 
   <!-- Link pra voltar pro formulário -->
-  <p><a href="formulario.html">Voltar</a></p>
+  <p><a href="index.html">Voltar</a></p>
 
 <?php endif; ?>

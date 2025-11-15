@@ -72,7 +72,7 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <button class="btn border border-info text-white"  type="submit" >Buscar</button>
 <a href="listar.php" class="btn border border-warning text-white">Limpar</a>
 
-<a href="formulario.php" class="btn border border-success text-white ">+ Novo Cadastro</a> 
+<a href="index.php" class="btn border border-success text-white ">+ Novo Cadastro</a> 
 
 </form>
 
