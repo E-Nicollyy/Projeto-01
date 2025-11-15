@@ -15,17 +15,17 @@ function db() : PDO {
             // ======================================================
 
             // Host do servidor MySQL do InfinityFree
-            $host = 'sql312.infinityfree.com';
+            $host = 'sql105.infinityfree.com';
 
             // Nome do banco que o InfinityFree criou
-            $dbname = 'if0_40421490_mysqlPHP00';
+            $dbname = 'if0_40421868_emilly_db';
 
             // DSN = string que o PDO usa para conectar
             $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
 
             // Usuário e senha do MySQL no InfinityFree
-            $usuario = 'if0_40421490';
-            $senha   = '@E_nicollyy3'; // <-- Troque pela senha real do painel
+            $usuario = 'if0_40421868';
+            $senha   = 'LRMQ9kZuQOhpgcn'; // <-- Troque pela senha real do painel
 
             // ======================================================
             //  CRIA A CONEXÃO COM O BANCO
